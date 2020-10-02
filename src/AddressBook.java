@@ -5,25 +5,28 @@ public class AddressBook{
     private ArrayList<BuddyInfo> buddies;
 
     public AddressBook(){
-        this.buddies = new ArrayList<BuddyInfo>();
+        buddies = new ArrayList<>();
     }
 
     public void addBuddy(BuddyInfo buddy){
-        this.buddies.add(buddy);
+        buddies.add(buddy);
     }
 
-    public void removeBuddy(BuddyInfo buddy){
-        this.buddies.remove(buddy);
+    public BuddyInfo removeBuddy(int index){
+        if(index >= 0 && index < buddies.size()){
+            return buddies.remove(index);
+        }
+        return null;
     }
 
     public static void main(String [] args){
-        BuddyInfo buddy = new BuddyInfo("Tom", "Carleton",  613);
+        BuddyInfo buddy = new BuddyInfo("Tom", "Carleton",  "613");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(buddy);
-        System.out.println(addressBook);
+        addressBook.removeBuddy(0);
+
 
     }
-
-
 }
+
+
