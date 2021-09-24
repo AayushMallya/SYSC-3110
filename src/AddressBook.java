@@ -20,6 +20,9 @@ public class AddressBook{
         }
         return null;
     }
+    public String testMethod(){
+        return "this is a branch test";
+    }
 
     public static void main(String [] args){
         BuddyInfo buddy = new BuddyInfo("Tom", "Carleton",  613);
